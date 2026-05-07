@@ -1168,6 +1168,102 @@
         </div>
         <!-- End Modal Portfolio area -->
 
+        <!-- Modal Portfolio 4 - Marketing -->
+        <div class="modal fade" id="portfolio4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i data-feather="x"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="portfolio-popup-thumbnail">
+                                    <div class="image">
+                                        <a href="assets/images/portfolio/portfolio-05.png" target="_blank">
+                                            <img class="w-100" src="assets/images/portfolio/portfolio-05.png" alt="Marketing">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="text-content">
+                                    <h3><span>Advertising</span> Marketing for Culinary Ventures and Lead Generation.</h3>
+                                    <p class="mb--30">A strategic advertising project for culinary businesses, focused on digital campaigns and lead generation funnels. The work included content creation, targeted ads, and brand positioning to drive customer acquisition in a competitive food market.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Portfolio 5 - Logos -->
+        <div class="modal fade" id="portfolio5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i data-feather="x"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="portfolio-popup-thumbnail">
+                                    <div class="image">
+                                        <a href="assets/images/portfolio/portfolio-02.png" target="_blank">
+                                            <img class="w-100" src="assets/images/portfolio/portfolio-02.png" alt="Logos">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="text-content">
+                                    <h3><span>Logos</span> Logos for Local Businesses and Artists.</h3>
+                                    <p class="mb--30">A collection of logo designs crafted for local businesses and independent artists. Each mark was built from scratch — exploring identity, symbolism, and typography — to give each client a distinctive and memorable visual presence.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Portfolio 6 - Brand Exposure -->
+        <div class="modal fade" id="portfolio6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i data-feather="x"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="portfolio-popup-thumbnail">
+                                    <div class="image">
+                                        <a href="assets/images/portfolio/portfolio-06.png" target="_blank">
+                                            <img class="w-100" src="assets/images/portfolio/portfolio-06.png" alt="Brand Exposure">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="text-content">
+                                    <h3><span>Brand Exposure</span> Brand Exposure and Social Media Presence for a Scientific Center.</h3>
+                                    <p class="mb--30">A full brand exposure project for a scientific research center, covering social media strategy, content design, and digital presence. The goal was to communicate complex scientific work in an accessible and visually engaging way to a broader public audience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Back to  top Start -->
         <div class="backto-top">
@@ -1415,6 +1511,105 @@
         .lang-name  { font-size: 15px; font-weight: 600; letter-spacing: 0.05em; color: #c4cfde; }
     </style>
 
+    <!-- Dark / Light mode toggle -->
+    <div id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">
+        <span id="theme-icon">☀️</span>
+    </div>
+
+    <style>
+        #theme-toggle {
+            position: fixed;
+            bottom: 32px;
+            left: 32px;
+            z-index: 9999;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #1e2024, #23272b);
+            border: 1px solid rgba(255,1,79,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        #theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(255,1,79,0.3);
+        }
+
+        /* ---- LIGHT MODE overrides ---- */
+        body.light-mode {
+            background-color: #f4f5f6 !important;
+            --color-heading: #1e2125 !important;
+            --color-body: #3c3e41 !important;
+            --background-color-1: linear-gradient(145deg, #ffffff, #f0f2f5) !important;
+            --background-color-2: #ffffff !important;
+        }
+        body.light-mode .rn-header-area,
+        body.light-mode .header-style-2 {
+            background: #ffffff !important;
+            border-color: #e6e6e6 !important;
+        }
+        body.light-mode .rn-portfolio .inner,
+        body.light-mode .rn-service .inner,
+        body.light-mode .modal-content,
+        body.light-mode .resume-single-list .inner,
+        body.light-mode .rn-nav-list,
+        body.light-mode .contact-about-area,
+        body.light-mode .contact-form-wrapper {
+            background: #ffffff !important;
+            border-color: #e6e6e6 !important;
+        }
+        body.light-mode h1, body.light-mode h2, body.light-mode h3,
+        body.light-mode h4, body.light-mode .title, body.light-mode .maintitle {
+            color: #1e2125 !important;
+        }
+        body.light-mode p, body.light-mode .description,
+        body.light-mode .nav-link, body.light-mode label {
+            color: #3c3e41 !important;
+        }
+        body.light-mode .section-separator {
+            border-color: #e6e6e6 !important;
+        }
+        body.light-mode #theme-toggle {
+            background: linear-gradient(145deg, #ffffff, #f0f2f5);
+            border-color: rgba(255,1,79,0.4);
+        }
+        body.light-mode .popup-mobile-menu .inner {
+            background: #ffffff !important;
+        }
+        body.light-mode .rn-footer-area {
+            background: #f0f2f5 !important;
+        }
+    </style>
+
+    <script>
+        // Dark/light toggle
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                icon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.add('light-mode');
+                icon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        // Restore saved theme
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+            document.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('theme-icon').textContent = '🌙';
+            });
+        }
+    </script>
+
     <script>
         const translations = {
             en: {
@@ -1449,7 +1644,18 @@
                 "resume-title":      "My Resume",
                 "resume-tab-edu":    "Education",
                 "resume-tab-exp":    "Experience",
-                "resume-tab-skills": "Skills",
+                "resume-tab-skills": "Professional Skills",
+                // Contact
+                "contact-subtitle":      "Contact",
+                "contact-title":         "Contact Me",
+                "contact-spec":          "Specialist in Graphic Design",
+                "contact-desc":          "I'm available for a wide range of opportunities. Please feel free to reach out for a conversation!",
+                "contact-label-name":    "Your Name",
+                "contact-label-phone":   "Phone Number",
+                "contact-label-email":   "Email",
+                "contact-label-subject": "Subject",
+                "contact-label-msg":     "Your Message",
+                "contact-send-btn":      "SEND MESSAGE",
             },
             es: {
                 // Nav
@@ -1483,61 +1689,139 @@
                 "resume-title":      "Mi Currículum",
                 "resume-tab-edu":    "Educación",
                 "resume-tab-exp":    "Experiencia",
-                "resume-tab-skills": "Habilidades",
+                "resume-tab-skills": "Habilidades Profesionales",
+                // Contact
+                "contact-subtitle":      "Contacto",
+                "contact-title":         "Contáctame",
+                "contact-spec":          "Especialista en Diseño Gráfico",
+                "contact-desc":          "Estoy disponible para todo tipo de oportunidades. ¡No dudes en escribirme para tener una conversación!",
+                "contact-label-name":    "Tu nombre",
+                "contact-label-phone":   "Número de teléfono",
+                "contact-label-email":   "Correo electrónico",
+                "contact-label-subject": "Asunto",
+                "contact-label-msg":     "Tu mensaje",
+                "contact-send-btn":      "ENVIAR MENSAJE",
             }
         };
 
         // Map translation keys to DOM selectors
         const keyMap = [
-            // Desktop nav
-            { key: "nav-home",      sel: '.header-default .nav-item:nth-child(1) .nav-link' },
-            { key: "nav-features",  sel: '.header-default .nav-item:nth-child(2) .nav-link' },
-            { key: "nav-portfolio", sel: '.header-default .nav-item:nth-child(3) .nav-link' },
-            { key: "nav-resume",    sel: '.header-default .nav-item:nth-child(4) .nav-link' },
-            { key: "nav-contact",   sel: '.header-default .nav-item:nth-child(5) .nav-link' },
-            { key: "nav-contactme", sel: '.header-default .rn-btn .title' },
+            // Desktop side nav (header-style-2 > header)
+            { key: "nav-home",      sel: '#sideNavs .nav-item:nth-child(1) .nav-link' },
+            { key: "nav-features",  sel: '#sideNavs .nav-item:nth-child(2) .nav-link' },
+            { key: "nav-portfolio", sel: '#sideNavs .nav-item:nth-child(3) .nav-link' },
+            { key: "nav-resume",    sel: '#sideNavs .nav-item:nth-child(4) .nav-link' },
+            { key: "nav-contact",   sel: '#sideNavs .nav-item:nth-child(5) .nav-link' },
+            { key: "nav-contactme", sel: '.left-header-style .footer .title' },
             // Mobile nav
             { key: "nav-home",      sel: '.popup-mobile-menu .nav-item:nth-child(1) .nav-link' },
             { key: "nav-features",  sel: '.popup-mobile-menu .nav-item:nth-child(2) .nav-link' },
             { key: "nav-portfolio", sel: '.popup-mobile-menu .nav-item:nth-child(3) .nav-link' },
             { key: "nav-resume",    sel: '.popup-mobile-menu .nav-item:nth-child(4) .nav-link' },
             { key: "nav-contact",   sel: '.popup-mobile-menu .nav-item:nth-child(5) .nav-link' },
-            { key: "nav-contactme", sel: '.popup-mobile-menu .rn-btn .title' },
+            // Hero
+            { key: "hero-iam", fn: (t) => {
+                const el = document.querySelector('.cd-headline > span:first-child');
+                if (el) el.textContent = t['hero-iam'];
+            }},
+            { key: "hero-btn", fn: (t) => {
+                const el = document.querySelector('.button-area .rn-btn span');
+                if (el) el.textContent = t['hero-btn'];
+            }},
             // Features section
             { key: "features-subtitle", sel: '#features .section-title .subtitle' },
             { key: "features-title",    sel: '#features .section-title .title' },
-            { key: "feat1-title", sel: '.rn-service:nth-child(1) .title a' },
-            { key: "feat1-desc",  sel: '.rn-service:nth-child(1) .description' },
-            { key: "feat2-title", sel: '.rn-service:nth-child(2) .title a' },
-            { key: "feat2-desc",  sel: '.rn-service:nth-child(2) .description' },
-            { key: "feat3-title", sel: '.rn-service:nth-child(3) .title a' },
-            { key: "feat3-desc",  sel: '.rn-service:nth-child(3) .description' },
-            // Portfolio
-            { key: "portfolio-subtitle",    sel: '#portfolio .section-title .subtitle' },
-            { key: "portfolio-title",       sel: '#portfolio .section-title .title' },
-            { key: "portfolio-web-title",   sel: '#portfolio .row.mt--40 .title' },
-            { key: "portfolio-other-sub",   sel: '#portfolio .row.mt--60 .subtitle' },
-            { key: "portfolio-other-title", sel: '#portfolio .row.mt--60 .title' },
+            { key: "feat1-title", fn: (t) => {
+                const els = document.querySelectorAll('.rn-service');
+                if (els[0]) els[0].querySelector('.title a').textContent = t['feat1-title'];
+            }},
+            { key: "feat1-desc", fn: (t) => {
+                const els = document.querySelectorAll('.rn-service');
+                if (els[0]) els[0].querySelector('.description').textContent = t['feat1-desc'];
+            }},
+            { key: "feat2-title", fn: (t) => {
+                const els = document.querySelectorAll('.rn-service');
+                if (els[1]) els[1].querySelector('.title a').textContent = t['feat2-title'];
+            }},
+            { key: "feat2-desc", fn: (t) => {
+                const els = document.querySelectorAll('.rn-service');
+                if (els[1]) els[1].querySelector('.description').textContent = t['feat2-desc'];
+            }},
+            { key: "feat3-title", fn: (t) => {
+                const els = document.querySelectorAll('.rn-service');
+                if (els[2]) els[2].querySelector('.title a').textContent = t['feat3-title'];
+            }},
+            { key: "feat3-desc", fn: (t) => {
+                const els = document.querySelectorAll('.rn-service');
+                if (els[2]) els[2].querySelector('.description').textContent = t['feat3-desc'];
+            }},
+            // Portfolio section headers
+            { key: "portfolio-subtitle",     sel: '#portfolio .section-title .subtitle' },
+            { key: "portfolio-title",        sel: '#portfolio .section-title .title' },
+            { key: "portfolio-web-title",    fn: (t) => {
+                const el = document.querySelector('#portfolio .row.mt--40 h3.title');
+                if (el) el.textContent = t['portfolio-web-title'];
+            }},
+            { key: "portfolio-other-sub",    fn: (t) => {
+                const el = document.querySelector('#portfolio .row.mt--60 .subtitle');
+                if (el) el.textContent = t['portfolio-other-sub'];
+            }},
+            { key: "portfolio-other-title",  fn: (t) => {
+                const el = document.querySelector('#portfolio .row.mt--60 h3.title');
+                if (el) el.textContent = t['portfolio-other-title'];
+            }},
             // Resume
             { key: "resume-subtitle",   sel: '#resume .section-title .subtitle' },
             { key: "resume-title",      sel: '#resume .section-title .title' },
             { key: "resume-tab-edu",    sel: '#education-tab' },
             { key: "resume-tab-exp",    sel: '#experience-tab' },
             { key: "resume-tab-skills", sel: '#professional-tab' },
+            // Contact section
+            { key: "contact-subtitle", sel: '#contacts .section-title .subtitle' },
+            { key: "contact-title",    sel: '#contacts .section-title .title' },
+            { key: "contact-spec",     sel: '.contact-about-area .title-area span' },
+            { key: "contact-desc",     sel: '.contact-about-area .description p' },
+            { key: "contact-label-name",    fn: (t) => {
+                const el = document.querySelector('label[for="contact-name"]');
+                if (el) el.textContent = t['contact-label-name'];
+            }},
+            { key: "contact-label-phone",   fn: (t) => {
+                const el = document.querySelector('label[for="contact-phone"]');
+                if (el) el.textContent = t['contact-label-phone'];
+            }},
+            { key: "contact-label-email",   fn: (t) => {
+                const el = document.querySelector('label[for="contact-email"]');
+                if (el) el.textContent = t['contact-label-email'];
+            }},
+            { key: "contact-label-subject", fn: (t) => {
+                const el = document.querySelector('label[for="subject"]');
+                if (el) el.textContent = t['contact-label-subject'];
+            }},
+            { key: "contact-label-msg",     fn: (t) => {
+                const el = document.querySelector('label[for="contact-message"]');
+                if (el) el.textContent = t['contact-label-msg'];
+            }},
+            { key: "contact-send-btn",      sel: '#submit span' },
         ];
 
         function setLanguage(lang) {
             const t = translations[lang];
-            keyMap.forEach(({ key, sel }) => {
-                document.querySelectorAll(sel).forEach(el => {
-                    if (t[key]) el.textContent = t[key];
-                });
+            keyMap.forEach(({ key, sel, fn }) => {
+                if (fn) {
+                    fn(t);
+                } else if (sel && t[key]) {
+                    document.querySelectorAll(sel).forEach(el => {
+                        el.textContent = t[key];
+                    });
+                }
             });
             // Close popup with fade-out
             const overlay = document.getElementById('lang-overlay');
-            overlay.style.transition = 'opacity 0.3s ease';
-            overlay.style.opacity = '0';
-            setTimeout(() => overlay.remove(), 300);
+            if (overlay) {
+                overlay.style.transition = 'opacity 0.3s ease';
+                overlay.style.opacity = '0';
+                setTimeout(() => overlay.remove(), 300);
+            }
         }
     </script>
 </body>
