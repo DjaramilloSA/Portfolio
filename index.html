@@ -1334,6 +1334,212 @@
 
         );
     </script>
+
+    <!-- Language Selector Popup -->
+    <div id="lang-overlay">
+        <div id="lang-popup">
+            <p id="lang-popup-label">Choose your language / Elige tu idioma</p>
+            <div id="lang-buttons">
+                <button id="btn-en" onclick="setLanguage('en')">
+                    <span class="lang-flag">🇺🇸</span>
+                    <span class="lang-name">English</span>
+                </button>
+                <button id="btn-es" onclick="setLanguage('es')">
+                    <span class="lang-flag">🇪🇸</span>
+                    <span class="lang-name">Español</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        #lang-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(3px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: overlayIn 0.3s ease;
+        }
+        @keyframes overlayIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        #lang-popup {
+            background: linear-gradient(145deg, #1e2024, #23272b);
+            border: 1px solid rgba(255,1,79,0.25);
+            border-radius: 16px;
+            padding: 40px 48px;
+            text-align: center;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+            animation: popupIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        @keyframes popupIn {
+            from { opacity: 0; transform: scale(0.85) translateY(20px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        #lang-popup-label {
+            color: #878e99;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+        #lang-buttons {
+            display: flex;
+            gap: 16px;
+        }
+        #lang-buttons button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background: #212428;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 22px 32px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #fff;
+        }
+        #lang-buttons button:hover {
+            border-color: #ff014f;
+            background: rgba(255,1,79,0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(255,1,79,0.2);
+        }
+        .lang-flag  { font-size: 36px; line-height: 1; }
+        .lang-name  { font-size: 15px; font-weight: 600; letter-spacing: 0.05em; color: #c4cfde; }
+    </style>
+
+    <script>
+        const translations = {
+            en: {
+                // Nav
+                "nav-home":      "Home",
+                "nav-features":  "Features",
+                "nav-portfolio": "Portfolio",
+                "nav-resume":    "Resume",
+                "nav-contact":   "Contact",
+                "nav-contactme": "Contact me",
+                // Hero
+                "hero-iam":      "I am a",
+                "hero-btn":      "CONTACT ME",
+                // Features
+                "features-subtitle": "Features",
+                "features-title":    "What I Do",
+                "feat1-title":  "UI Design",
+                "feat1-desc":   "I design visually compelling and user-friendly interfaces that blend creativity with functionality, ensuring seamless experiences across all platforms.",
+                "feat2-title":  "Advertising",
+                "feat2-desc":   "Elevate your brand with strategic advertising that captures attention, drives engagement, and delivers measurable results across digital and print media.",
+                "feat3-title":  "Creator",
+                "feat3-desc":   "Transforming concepts into reality with innovative brand and social media strategies, content creation, and digital marketing solutions that inspire and engage.",
+                // Portfolio
+                "portfolio-subtitle": "Visit my portfolio and keep your feedback",
+                "portfolio-title":    "My Portfolio",
+                "portfolio-web-sub":  "Behance",
+                "portfolio-web-title":"Web & App Design",
+                "portfolio-other-sub":"Selected Works",
+                "portfolio-other-title":"Other Projects",
+                // Resume
+                "resume-subtitle":   "3+ Years of Experience",
+                "resume-title":      "My Resume",
+                "resume-tab-edu":    "Education",
+                "resume-tab-exp":    "Experience",
+                "resume-tab-skills": "Skills",
+            },
+            es: {
+                // Nav
+                "nav-home":      "Inicio",
+                "nav-features":  "Servicios",
+                "nav-portfolio": "Portafolio",
+                "nav-resume":    "Currículum",
+                "nav-contact":   "Contacto",
+                "nav-contactme": "Contáctame",
+                // Hero
+                "hero-iam":      "Soy",
+                "hero-btn":      "CONTÁCTAME",
+                // Features
+                "features-subtitle": "Servicios",
+                "features-title":    "Lo que hago",
+                "feat1-title":  "Diseño UI",
+                "feat1-desc":   "Diseño interfaces visualmente atractivas y fáciles de usar que combinan creatividad y funcionalidad, garantizando experiencias fluidas en todas las plataformas.",
+                "feat2-title":  "Publicidad",
+                "feat2-desc":   "Eleva tu marca con publicidad estratégica que capta la atención, genera engagement y entrega resultados medibles en medios digitales e impresos.",
+                "feat3-title":  "Creador",
+                "feat3-desc":   "Transformo conceptos en realidad con estrategias innovadoras de marca y redes sociales, creación de contenido y soluciones de marketing digital que inspiran y conectan.",
+                // Portfolio
+                "portfolio-subtitle": "Visita mi portafolio y deja tu opinión",
+                "portfolio-title":    "Mi Portafolio",
+                "portfolio-web-sub":  "Behance",
+                "portfolio-web-title":"Diseño Web y de Apps",
+                "portfolio-other-sub":"Trabajos Destacados",
+                "portfolio-other-title":"Otros Proyectos",
+                // Resume
+                "resume-subtitle":   "Más de 3 años de experiencia",
+                "resume-title":      "Mi Currículum",
+                "resume-tab-edu":    "Educación",
+                "resume-tab-exp":    "Experiencia",
+                "resume-tab-skills": "Habilidades",
+            }
+        };
+
+        // Map translation keys to DOM selectors
+        const keyMap = [
+            // Desktop nav
+            { key: "nav-home",      sel: '.header-default .nav-item:nth-child(1) .nav-link' },
+            { key: "nav-features",  sel: '.header-default .nav-item:nth-child(2) .nav-link' },
+            { key: "nav-portfolio", sel: '.header-default .nav-item:nth-child(3) .nav-link' },
+            { key: "nav-resume",    sel: '.header-default .nav-item:nth-child(4) .nav-link' },
+            { key: "nav-contact",   sel: '.header-default .nav-item:nth-child(5) .nav-link' },
+            { key: "nav-contactme", sel: '.header-default .rn-btn .title' },
+            // Mobile nav
+            { key: "nav-home",      sel: '.popup-mobile-menu .nav-item:nth-child(1) .nav-link' },
+            { key: "nav-features",  sel: '.popup-mobile-menu .nav-item:nth-child(2) .nav-link' },
+            { key: "nav-portfolio", sel: '.popup-mobile-menu .nav-item:nth-child(3) .nav-link' },
+            { key: "nav-resume",    sel: '.popup-mobile-menu .nav-item:nth-child(4) .nav-link' },
+            { key: "nav-contact",   sel: '.popup-mobile-menu .nav-item:nth-child(5) .nav-link' },
+            { key: "nav-contactme", sel: '.popup-mobile-menu .rn-btn .title' },
+            // Features section
+            { key: "features-subtitle", sel: '#features .section-title .subtitle' },
+            { key: "features-title",    sel: '#features .section-title .title' },
+            { key: "feat1-title", sel: '.rn-service:nth-child(1) .title a' },
+            { key: "feat1-desc",  sel: '.rn-service:nth-child(1) .description' },
+            { key: "feat2-title", sel: '.rn-service:nth-child(2) .title a' },
+            { key: "feat2-desc",  sel: '.rn-service:nth-child(2) .description' },
+            { key: "feat3-title", sel: '.rn-service:nth-child(3) .title a' },
+            { key: "feat3-desc",  sel: '.rn-service:nth-child(3) .description' },
+            // Portfolio
+            { key: "portfolio-subtitle",    sel: '#portfolio .section-title .subtitle' },
+            { key: "portfolio-title",       sel: '#portfolio .section-title .title' },
+            { key: "portfolio-web-title",   sel: '#portfolio .row.mt--40 .title' },
+            { key: "portfolio-other-sub",   sel: '#portfolio .row.mt--60 .subtitle' },
+            { key: "portfolio-other-title", sel: '#portfolio .row.mt--60 .title' },
+            // Resume
+            { key: "resume-subtitle",   sel: '#resume .section-title .subtitle' },
+            { key: "resume-title",      sel: '#resume .section-title .title' },
+            { key: "resume-tab-edu",    sel: '#education-tab' },
+            { key: "resume-tab-exp",    sel: '#experience-tab' },
+            { key: "resume-tab-skills", sel: '#professional-tab' },
+        ];
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+            keyMap.forEach(({ key, sel }) => {
+                document.querySelectorAll(sel).forEach(el => {
+                    if (t[key]) el.textContent = t[key];
+                });
+            });
+            // Close popup with fade-out
+            const overlay = document.getElementById('lang-overlay');
+            overlay.style.transition = 'opacity 0.3s ease';
+            overlay.style.opacity = '0';
+            setTimeout(() => overlay.remove(), 300);
+        }
+    </script>
 </body>
 
 </html>
