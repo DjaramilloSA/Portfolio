@@ -176,9 +176,9 @@
                                 <span>I am a</span>
                                 <!-- ROTATING TEXT -->
                                 <span class="cd-words-wrapper">
-                                    <b class="is-visible">UI Designer.</b>
-                                    <b class="is-hidden">publicist.</b>
-                                    <b class="is-hidden">creator.</b>
+                                    <b class="is-visible" data-i18n="hero-word1">UI Designer.</b>
+                                    <b class="is-hidden" data-i18n="hero-word2">publicist.</b>
+                                    <b class="is-hidden" data-i18n="hero-word3">creator.</b>
                                 </span>
                             </span>
                             <!-- type headline end -->
@@ -1542,85 +1542,69 @@
 
         /* ---- Hero headline centering fix ---- */
         .cd-headline {
-            display: flex !important;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 0.3em;
+            text-align: center;
+            width: 100%;
+        }
+        .cd-headline > span:first-child {
+            margin-right: 0.25em;
         }
         .cd-words-wrapper {
             display: inline-block;
-            min-width: 220px;
+            min-width: 200px;
             text-align: left;
         }
 
-        /* ---- LIGHT MODE overrides ---- */
-        body.light-mode {
-            background-color: #f4f5f6 !important;
-            --color-heading: #1e2125 !important;
-            --color-body: #3c3e41 !important;
-            --background-color-1: linear-gradient(145deg, #ffffff, #f0f2f5) !important;
-            --background-color-2: #ffffff !important;
-        }
-        body.light-mode .rn-header-area,
-        body.light-mode .header-style-2 {
+        /* ---- DARK MODE overrides (default) ---- */
+        /* The page already IS dark by default via its own CSS.
+           We just need to ensure white-version is removed for dark. */
+
+        /* ---- LIGHT MODE: body.white-version is already the theme's light mode ---- */
+        /* When toggling to light we ADD white-version back */
+        /* Extra light polish for cards/modals */
+        body.white-version .modal-content {
             background: #ffffff !important;
-            border-color: #e6e6e6 !important;
-        }
-        body.light-mode .rn-portfolio .inner,
-        body.light-mode .rn-service .inner,
-        body.light-mode .modal-content,
-        body.light-mode .resume-single-list .inner,
-        body.light-mode .rn-nav-list,
-        body.light-mode .contact-about-area,
-        body.light-mode .contact-form-wrapper {
-            background: #ffffff !important;
-            border-color: #e6e6e6 !important;
-        }
-        body.light-mode h1, body.light-mode h2, body.light-mode h3,
-        body.light-mode h4, body.light-mode .title, body.light-mode .maintitle {
             color: #1e2125 !important;
         }
-        body.light-mode p, body.light-mode .description,
-        body.light-mode .nav-link, body.light-mode label {
-            color: #3c3e41 !important;
+        body.white-version .modal-content h3,
+        body.white-version .modal-content p {
+            color: #1e2125 !important;
         }
-        body.light-mode .section-separator {
-            border-color: #e6e6e6 !important;
-        }
-        body.light-mode #theme-toggle {
+        body.white-version #theme-toggle {
             background: linear-gradient(145deg, #ffffff, #f0f2f5);
             border-color: rgba(255,1,79,0.4);
-        }
-        body.light-mode .popup-mobile-menu .inner {
-            background: #ffffff !important;
-        }
-        body.light-mode .rn-footer-area {
-            background: #f0f2f5 !important;
         }
     </style>
 
     <script>
-        // Dark/light toggle
+        // Page starts as dark: remove white-version on load unless user chose light
+        (function() {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'light') {
+                document.body.classList.add('white-version');
+                document.addEventListener('DOMContentLoaded', () => {
+                    const icon = document.getElementById('theme-icon');
+                    if (icon) icon.textContent = '🌙';
+                });
+            } else {
+                // Dark mode: remove the white-version class the body has by default
+                document.body.classList.remove('white-version');
+            }
+        })();
+
         function toggleTheme() {
             const body = document.body;
             const icon = document.getElementById('theme-icon');
-            if (body.classList.contains('light-mode')) {
-                body.classList.remove('light-mode');
+            if (body.classList.contains('white-version')) {
+                // Switch to dark
+                body.classList.remove('white-version');
                 icon.textContent = '☀️';
                 localStorage.setItem('theme', 'dark');
             } else {
-                body.classList.add('light-mode');
+                // Switch to light
+                body.classList.add('white-version');
                 icon.textContent = '🌙';
                 localStorage.setItem('theme', 'light');
             }
-        }
-        // Restore saved theme
-        if (localStorage.getItem('theme') === 'light') {
-            document.body.classList.add('light-mode');
-            document.addEventListener('DOMContentLoaded', () => {
-                document.getElementById('theme-icon').textContent = '🌙';
-            });
         }
     </script>
 
@@ -1635,8 +1619,11 @@
                 "nav-contact":   "Contact",
                 "nav-contactme": "Contact me",
                 // Hero
-                "hero-iam":      "I am a",
-                "hero-btn":      "CONTACT ME",
+                "hero-iam":   "I am a",
+                "hero-btn":   "CONTACT ME",
+                "hero-word1": "UI Designer.",
+                "hero-word2": "publicist.",
+                "hero-word3": "creator.",
                 // Features
                 "features-subtitle": "Features",
                 "features-title":    "What I Do",
@@ -1695,8 +1682,12 @@
                 "nav-contact":   "Contacto",
                 "nav-contactme": "Contáctame",
                 // Hero
-                "hero-iam":      "Soy",
-                "hero-btn":      "CONTÁCTAME",
+                // Hero
+                "hero-iam":   "Soy",
+                "hero-btn":   "CONTÁCTAME",
+                "hero-word1": "Diseñador UI.",
+                "hero-word2": "publicista.",
+                "hero-word3": "creador.",
                 // Features
                 "features-subtitle": "Servicios",
                 "features-title":    "Lo que hago",
