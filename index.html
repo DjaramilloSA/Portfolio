@@ -609,7 +609,7 @@
                                         <div class="col-lg-6 col-md-12 col-12">
                                             <div class="content">
                                                 <span class="subtitle">2021 - 2024</span>
-                                                <h4 class="maintitle">College Education</h4>
+                                                <h4 class="maintitle" data-i18n="edu-title">College Education</h4>
                                                 <div class="experience-list">
 
                                                     <!-- Start Single List  -->
@@ -617,12 +617,12 @@
                                                         <div class="inner">
                                                             <div class="heading">
                                                                 <div class="title">
-                                                                    <h4>Graphic Design Specialist</h4>
+                                                                    <h4 data-i18n="edu1-title">Graphic Design Specialist</h4>
                                                                     <span>Tecnologico Espiritu Santo</span>
                                                                 </div>
 
                                                             </div>
-                                                            <p class="description">The education I have received in this
+                                                            <p class="description" data-i18n="edu1-desc">The education I have received in this
                                                                 field is not only focused on refining my skills and
                                                                 turning me into a specialist in graphic design, but also
                                                                 on enabling me to interact with the user, turning their
@@ -636,12 +636,12 @@
                                                         <div class="inner">
                                                             <div class="heading">
                                                                 <div class="title">
-                                                                    <h4>Basic education in Science</h4>
+                                                                    <h4 data-i18n="edu2-title">Basic education in Science</h4>
                                                                     <span>Centro Educativo Naciones Unidas</span>
                                                                 </div>
 
                                                             </div>
-                                                            <p class="description">In my initial education, I learned
+                                                            <p class="description" data-i18n="edu2-desc">In my initial education, I learned
                                                                 the foundations of my knowledge in computer science, as
                                                                 well as the basics of my English skills, both written
                                                                 and spoken.</p>
@@ -673,7 +673,7 @@
                                             <div class="progress-wrapper">
                                                 <div class="content">
                                                     <span class="subtitle">Features</span>
-                                                    <h4 class="maintitle">Design Skill</h4>
+                                                    <h4 class="maintitle" data-i18n="skills-title">Design Skill</h4>
                                                     <!-- Start Single Progress Charts -->
                                                     <div class="progress-charts">
                                                         <h6 class="heading heading-h6">PHOTOSHOT</h6>
@@ -771,11 +771,11 @@
                                                         <div class="inner">
                                                             <div class="heading">
                                                                 <div class="title">
-                                                                    <h4>UI modeling </h4>
+                                                                    <h4 data-i18n="exp1-role">UI modeling </h4>
                                                                 </div>
 
                                                             </div>
-                                                            <p class="description">I have created multiple user
+                                                            <p class="description" data-i18n="exp1-desc">I have created multiple user
                                                                 interfaces with the purpose of bringing my client's
                                                                 ideas to life. Among these ideas are a doctor
                                                                 appointment scheduling application, pizza delivery, and
@@ -789,11 +789,11 @@
                                                         <div class="inner">
                                                             <div class="heading">
                                                                 <div class="title">
-                                                                    <h4>Branding for UI </h4>
+                                                                    <h4 data-i18n="exp2-role">Branding for UI </h4>
                                                                 </div>
 
                                                             </div>
-                                                            <p class="description">In addition to creating UI, I have
+                                                            <p class="description" data-i18n="exp2-desc">In addition to creating UI, I have
                                                                 had to give branding (color, texts, and animations) to
                                                                 the graphical interface with the purpose of giving
                                                                 identity to the application.</p>
@@ -821,11 +821,11 @@
                                                         <div class="inner">
                                                             <div class="heading">
                                                                 <div class="title">
-                                                                    <h4>Advertising creator </h4>
+                                                                    <h4 data-i18n="exp3-role">Advertising creator </h4>
                                                                 </div>
 
                                                             </div>
-                                                            <p class="description">AD creator with the purpose of
+                                                            <p class="description" data-i18n="exp3-desc">AD creator with the purpose of
                                                                 providing the sales team with content for online
                                                                 selling, and content to position the brand.</p>
                                                         </div>
@@ -837,11 +837,11 @@
                                                         <div class="inner">
                                                             <div class="heading">
                                                                 <div class="title">
-                                                                    <h4>Materials for conventions </h4>
+                                                                    <h4 data-i18n="exp4-role">Materials for conventions </h4>
                                                                 </div>
 
                                                             </div>
-                                                            <p class="description">This company is a real estate agency,
+                                                            <p class="description" data-i18n="exp4-desc">This company is a real estate agency,
                                                                 and for that reason, it attended events, conferences
                                                                 where it attracted potential clients. I participated in
                                                                 the creation of content such as triptychs,
@@ -874,11 +874,11 @@
                                                         <div class="inner">
                                                             <div class="heading">
                                                                 <div class="title">
-                                                                    <h4>Online Brand Exposure </h4>
+                                                                    <h4 data-i18n="exp5-role">Online Brand Exposure </h4>
                                                                 </div>
 
                                                             </div>
-                                                            <p class="description">Develop advertisements and content
+                                                            <p class="description" data-i18n="exp5-desc">Develop advertisements and content
                                                                 that helped position the brand and company in its market
                                                                 niche, it was necessary to start from scratch, choosing
                                                                 the brand identity, colors, texts, and logos.</p>
@@ -1540,6 +1540,20 @@
             box-shadow: 0 6px 28px rgba(255,1,79,0.3);
         }
 
+        /* ---- Hero headline centering fix ---- */
+        .cd-headline {
+            display: flex !important;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3em;
+        }
+        .cd-words-wrapper {
+            display: inline-block;
+            min-width: 220px;
+            text-align: left;
+        }
+
         /* ---- LIGHT MODE overrides ---- */
         body.light-mode {
             background-color: #f4f5f6 !important;
@@ -1645,8 +1659,23 @@
                 "resume-tab-edu":    "Education",
                 "resume-tab-exp":    "Experience",
                 "resume-tab-skills": "Professional Skills",
-                // Contact
-                "contact-subtitle":      "Contact",
+                // Resume content
+                "edu-title":  "College Education",
+                "edu1-title": "Graphic Design Specialist",
+                "edu1-desc":  "The education I have received in this field is not only focused on refining my skills and turning me into a specialist in graphic design, but also on enabling me to interact with the user, turning their ideas into a finished product.",
+                "edu2-title": "Basic education in Science",
+                "edu2-desc":  "In my initial education, I learned the foundations of my knowledge in computer science, as well as the basics of my English skills, both written and spoken.",
+                "skills-title": "Design Skill",
+                "exp1-role":  "UI modeling",
+                "exp1-desc":  "I have created multiple user interfaces with the purpose of bringing my client's ideas to life. Among these ideas are a doctor appointment scheduling application, pizza delivery, and credit card management.",
+                "exp2-role":  "Branding for UI",
+                "exp2-desc":  "In addition to creating UI, I have had to give branding (color, texts, and animations) to the graphical interface with the purpose of giving identity to the application.",
+                "exp3-role":  "Advertising creator",
+                "exp3-desc":  "AD creator with the purpose of providing the sales team with content for online selling, and content to position the brand.",
+                "exp4-role":  "Materials for conventions",
+                "exp4-desc":  "This company is a real estate agency, and for that reason, it attended events and conferences where it attracted potential clients. I participated in the creation of triptychs, announcements, and brochures used in multiple events.",
+                "exp5-role":  "Online Brand Exposure",
+                "exp5-desc":  "Developed advertisements and content that helped position the brand and company in its market niche, starting from scratch with brand identity, colors, texts, and logos.",
                 "contact-title":         "Contact Me",
                 "contact-spec":          "Specialist in Graphic Design",
                 "contact-desc":          "I'm available for a wide range of opportunities. Please feel free to reach out for a conversation!",
@@ -1690,6 +1719,23 @@
                 "resume-tab-edu":    "Educación",
                 "resume-tab-exp":    "Experiencia",
                 "resume-tab-skills": "Habilidades Profesionales",
+                // Resume content
+                "edu-title":  "Educación Universitaria",
+                "edu1-title": "Especialista en Diseño Gráfico",
+                "edu1-desc":  "La educación que he recibido en este campo no solo se enfoca en perfeccionar mis habilidades y convertirme en especialista en diseño gráfico, sino también en capacitarme para interactuar con el usuario, convirtiendo sus ideas en un producto terminado.",
+                "edu2-title": "Educación básica en Ciencias",
+                "edu2-desc":  "En mi educación inicial aprendí las bases de mis conocimientos en informática, así como los fundamentos de mi inglés, tanto escrito como hablado.",
+                "skills-title": "Habilidades de Diseño",
+                "exp1-role":  "Modelado UI",
+                "exp1-desc":  "He creado múltiples interfaces de usuario con el propósito de dar vida a las ideas de mis clientes. Entre estas destacan una aplicación de citas médicas, entrega de pizzas y gestión de tarjetas de crédito.",
+                "exp2-role":  "Branding para UI",
+                "exp2-desc":  "Además de crear UI, he tenido que aplicar branding (colores, textos y animaciones) a la interfaz gráfica con el propósito de darle identidad a la aplicación.",
+                "exp3-role":  "Creador de publicidad",
+                "exp3-desc":  "Creador de contenido publicitario con el propósito de proveer al equipo de ventas material para ventas en línea y posicionamiento de marca.",
+                "exp4-role":  "Materiales para convenciones",
+                "exp4-desc":  "Esta empresa es una agencia inmobiliaria que asistía a eventos y conferencias para atraer clientes potenciales. Participé en la creación de trípticos, anuncios y folletos utilizados en múltiples eventos.",
+                "exp5-role":  "Exposición de marca en línea",
+                "exp5-desc":  "Desarrollé publicidad y contenido que ayudó a posicionar la marca en su nicho de mercado, partiendo desde cero con la identidad de marca, colores, textos y logotipos.",
                 // Contact
                 "contact-subtitle":      "Contacto",
                 "contact-title":         "Contáctame",
@@ -1806,6 +1852,7 @@
 
         function setLanguage(lang) {
             const t = translations[lang];
+            // Handle keyMap entries
             keyMap.forEach(({ key, sel, fn }) => {
                 if (fn) {
                     fn(t);
@@ -1814,6 +1861,11 @@
                         el.textContent = t[key];
                     });
                 }
+            });
+            // Handle all data-i18n elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) el.textContent = t[key];
             });
             // Close popup with fade-out
             const overlay = document.getElementById('lang-overlay');
