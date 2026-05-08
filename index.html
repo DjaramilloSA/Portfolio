@@ -26,7 +26,7 @@
     <!-- start Header area -->
     <div class="d-none d-xl-block header-style-2">
         <header class="rn-header-area d-flex align-items-start flex-column left-header-style">
-            <div class="logo-area" style="display:none;">
+            <div class="logo-area" style="display:none;"></div>
             <nav id="sideNavs" class="mainmenu-nav navbar-example2 onepagenav">
                 <ul class="primary-menu nav nav-pills">
                     <li class="nav-item current"><a class="nav-link smoth-animation-two" href="#home"><i
@@ -898,9 +898,6 @@
                 <div class="row mt--50 mt_md--40 mt_sm--40 mt-contact-sm">
                     <div class="col-lg-5">
                         <div class="contact-about-area">
-                            <div class="thumbnail">
-                                <img src="assets/images/icons/contactme.png" alt="contact-img">
-                            </div>
                             <div class="title-area">
                                 <h4 class="title">Diego Jaramillo</h4>
                                 <span>Specialist in Graphic Design</span>
@@ -1868,27 +1865,27 @@
             { key: "features-title",    sel: '#features .section-title .title' },
             { key: "feat1-title", fn: (t) => {
                 const els = document.querySelectorAll('.rn-service');
-                if (els[0]) els[0].querySelector('.title a').textContent = t['feat1-title'];
+                if (els[0]) { const el = els[0].querySelector('.title a') || els[0].querySelector('h4.title'); if (el) el.textContent = t['feat1-title']; }
             }},
             { key: "feat1-desc", fn: (t) => {
                 const els = document.querySelectorAll('.rn-service');
-                if (els[0]) els[0].querySelector('.description').textContent = t['feat1-desc'];
+                if (els[0]) { const el = els[0].querySelector('.description'); if (el) el.textContent = t['feat1-desc']; }
             }},
             { key: "feat2-title", fn: (t) => {
                 const els = document.querySelectorAll('.rn-service');
-                if (els[1]) els[1].querySelector('.title a').textContent = t['feat2-title'];
+                if (els[1]) { const el = els[1].querySelector('.title a') || els[1].querySelector('h4.title'); if (el) el.textContent = t['feat2-title']; }
             }},
             { key: "feat2-desc", fn: (t) => {
                 const els = document.querySelectorAll('.rn-service');
-                if (els[1]) els[1].querySelector('.description').textContent = t['feat2-desc'];
+                if (els[1]) { const el = els[1].querySelector('.description'); if (el) el.textContent = t['feat2-desc']; }
             }},
             { key: "feat3-title", fn: (t) => {
                 const els = document.querySelectorAll('.rn-service');
-                if (els[2]) els[2].querySelector('.title a').textContent = t['feat3-title'];
+                if (els[2]) { const el = els[2].querySelector('.title a') || els[2].querySelector('h4.title'); if (el) el.textContent = t['feat3-title']; }
             }},
             { key: "feat3-desc", fn: (t) => {
                 const els = document.querySelectorAll('.rn-service');
-                if (els[2]) els[2].querySelector('.description').textContent = t['feat3-desc'];
+                if (els[2]) { const el = els[2].querySelector('.description'); if (el) el.textContent = t['feat3-desc']; }
             }},
             // Portfolio section headers
             { key: "portfolio-subtitle",     sel: '#portfolio .section-title .subtitle' },
