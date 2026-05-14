@@ -1573,11 +1573,11 @@
         <div id="lang-popup">
             <p id="lang-popup-label">Choose your language / Elige tu idioma</p>
             <div id="lang-buttons">
-                <button id="btn-en" onclick="setLanguage('en')">
+                <button id="btn-en">
                     <span class="lang-flag">🇺🇸</span>
                     <span class="lang-name">English</span>
                 </button>
-                <button id="btn-es" onclick="setLanguage('es')">
+                <button id="btn-es">
                     <span class="lang-flag">🇪🇸</span>
                     <span class="lang-name">Español</span>
                 </button>
@@ -2029,6 +2029,14 @@
                 setTimeout(() => overlay.remove(), 300);
             }
         }
+
+        // Wire up language buttons after everything is defined
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnEn = document.getElementById('btn-en');
+            const btnEs = document.getElementById('btn-es');
+            if (btnEn) btnEn.addEventListener('click', () => setLanguage('en'));
+            if (btnEs) btnEs.addEventListener('click', () => setLanguage('es'));
+        });
     </script>
 </body>
 
